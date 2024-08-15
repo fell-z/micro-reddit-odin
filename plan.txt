@@ -1,0 +1,20 @@
+User Model:
+  name:string [unique, present, min: 3]
+  email:string [present]
+  password:string [present, min: 5]
+
+  has_many :posts
+  has_many :comments
+
+Post Model:
+  title:string [present]
+  body:text [present]
+
+  belongs_to :user
+  has_many :comments
+
+Comment Model:
+  body:text [present]
+
+  belongs_to :user
+  belongs_to :post
