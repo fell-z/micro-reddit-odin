@@ -7,8 +7,8 @@ User Model:
   has_many :comments
 
 Post Model:
-  title:string [present]
-  body:text [present]
+  title:string [present, min: 5]
+  body:text [present, min: 10]
 
   belongs_to :user
   has_many :comments
